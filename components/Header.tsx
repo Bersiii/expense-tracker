@@ -32,12 +32,7 @@ const Header = () => {
             About
           </a>
 
-          <a
-            href="#blog"
-            className="text-[13px] text-gray-600 transition hover:text-gray-900"
-          >
-            Expenses
-          </a>
+          
 
           <a
             href="#contact"

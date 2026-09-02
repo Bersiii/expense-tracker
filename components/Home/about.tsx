@@ -10,7 +10,7 @@ const About = () => {
             id="about"
             className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl"
           >
-            About <span className="text-orange-500">M</span>ontra
+             <span className="text-orange-500">A</span>bout
           </h1>
           <p className="mt-4 text-lg text-gray-600">
             We believe that taking control of your money shouldn't feel like a

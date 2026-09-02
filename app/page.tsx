@@ -6,6 +6,7 @@ import Footer from "@/components/Home/footer";
 import About from "@/components/Home/about";
 import Image from "next/image";
 
+
 const Page = () => {
   return (
     <div
@@ -66,6 +67,7 @@ const Page = () => {
       </section>
       <About />
       <Note />
+
       <Footer />
     </div>
   );
