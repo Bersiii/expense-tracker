@@ -1,7 +1,6 @@
 'use client';
 
 import React , { useState}from "react";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 const Login = () => {
@@ -47,27 +46,21 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   return (
     <main
       className="flex min-h-screen items-center justify-center bg-cover bg-center bg-no-repeat px-6"
-      style={{ backgroundImage: "url('/bg.png')" }}
+      style={{ backgroundImage: "url('/bg.jpg')" }}
     >
       <div className="w-full max-w-md">
         {/* Logo */}
-        <div className="mb-8 flex justify-center">
-          <Image
+        <div className="flex items-center justify-center">
+          <img
             src="/logo.png"
             alt="Montra logo"
-            width={30}
-            height={30}
-            className="object-contain"
+            className="h-20 w-30 object-contain "
           />
-
-          <span className="text-xl font-semibold tracking-tight text-gray-900">
-            Montra
-          </span>
         </div>
 
         <div
           className="card w-96 bg-base-100 bg-cover bg-center shadow-sm"
-          style={{ backgroundImage: "url('/bg.png')" }}
+          style={{ backgroundImage: "url('/bg.jpg')" }}
         >
           <div className="card-body">
             {/* Heading */}
@@ -137,7 +130,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full rounded-xl bg-gray-900 py-3 text-sm font-medium text-white transition hover:bg-orange-500 disabled:cursor-not-allowed disabled:opacity-50"
+                className="w-full rounded-xl bg-gray-900 py-3 text-sm font-medium   text-white transition hover:bg-[#cbcacf] disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {loading ? "Signing in..." : "Sign in"}
               </button>
@@ -148,7 +141,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               Don't have an account?{" "}
               <a
                 href="/register"
-                className="font-medium text-orange-500 hover:text-orange-600"
+                className="font-medium text-orange-500 hover:bg-[#cbcacf]"
               >
                 Create account
               </a>

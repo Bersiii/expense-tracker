@@ -40,7 +40,7 @@ const Register = () => {
       }
 
       // Registration successful
-      router.push("/login");
+      router.push("/dashboard");
     } catch (error) {
       setError("Something went wrong. Please try again.");
     } finally {
@@ -51,29 +51,20 @@ const Register = () => {
   return (
     <main
       className="flex min-h-screen items-center justify-center bg-cover bg-center bg-no-repeat px-6"
-      style={{ backgroundImage: "url('/bg.png')" }}
+      style={{ backgroundImage: "url('/bg.jpg')" }}
     >
       <div className="w-full max-w-md">
         {/* Logo */}
-        <div className="mb-8 flex justify-center">
-          
-            <Image
-              src="/logo.png"
-              alt="Montra logo"
-              width={30}
-              height={30}
-              className="object-contain"
-            />
-
-            <span className="text-xl font-semibold tracking-tight text-gray-900">
-              Montra
-            </span>
-         
+        <div className="flex items-center gap-2  justify-center">
+          <img
+            src="/logo.png"
+            alt="Montra logo"
+            className="h-20 w-30 object-contain "
+          />
         </div>
-
         <div
           className="card w-96 bg-base-100 bg-cover bg-center shadow-sm"
-          style={{ backgroundImage: "url('/bg.png')" }}
+          style={{ backgroundImage: "url('/bg.jpg')" }}
         >
           <div className="card-body">
             <div className="mb-7 text-center">
@@ -117,6 +108,7 @@ const Register = () => {
 
                 <input
                   type="email"
+                  autoComplete="off"
                   placeholder="Email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -133,6 +125,7 @@ const Register = () => {
 
                 <input
                   type="password"
+                  autoComplete="new-password"
                   placeholder="Create a password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
@@ -165,7 +158,7 @@ const Register = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full rounded-xl bg-gray-900 py-3 text-sm font-medium text-white transition hover:bg-orange-500 disabled:cursor-not-allowed disabled:opacity-50"
+                className="w-full rounded-xl bg-gray-900 py-3 text-sm font-medium text-white transition hover:bg-[#cbcacf] disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {loading ? "Creating account..." : "Create account"}
               </button>
@@ -176,7 +169,7 @@ const Register = () => {
               Already have an account?{" "}
               <a
                 href="/login"
-                className="font-medium text-orange-500 hover:text-orange-600"
+                className="font-medium text-orange-500 hover:bg-[#cbcacf]"
               >
                 Log in
               </a>
