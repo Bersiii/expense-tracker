@@ -56,7 +56,7 @@ const Register = () => {
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="mb-8 flex justify-center">
-          <a href="/" className="flex items-center gap-2">
+          
             <Image
               src="/logo.png"
               alt="Montra logo"
@@ -68,7 +68,7 @@ const Register = () => {
             <span className="text-xl font-semibold tracking-tight text-gray-900">
               Montra
             </span>
-          </a>
+         
         </div>
 
         <div

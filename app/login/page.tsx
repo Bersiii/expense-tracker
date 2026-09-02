@@ -1,9 +1,168 @@
-import React from 'react'
+'use client';
+
+import React , { useState}from "react";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const Login = () => {
-  return (
-    <div>Login</div>
-  )
-}
+  const [email,setEmail] = useState("");
+  const [password,setPassword] = useState(""); 
+  const [error,setError] = useState("");
+  const router = useRouter();
+  const [loading,setLoading] = useState(false); 
 
-export default Login
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  setError("");
+  setLoading(true);
+
+  try {
+    const response = await fetch("/api/auth/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      setError(data.error || "Login failed");
+      return;
+    }
+
+    // Login successful
+    router.push("/dashboard");
+  } catch (error) {
+    setError("Something went wrong. Please try again.");
+  } finally {
+    setLoading(false);
+  }
+};
+  
+  return (
+    <main
+      className="flex min-h-screen items-center justify-center bg-cover bg-center bg-no-repeat px-6"
+      style={{ backgroundImage: "url('/bg.png')" }}
+    >
+      <div className="w-full max-w-md">
+        {/* Logo */}
+        <div className="mb-8 flex justify-center">
+          <Image
+            src="/logo.png"
+            alt="Montra logo"
+            width={30}
+            height={30}
+            className="object-contain"
+          />
+
+          <span className="text-xl font-semibold tracking-tight text-gray-900">
+            Montra
+          </span>
+        </div>
+
+        <div
+          className="card w-96 bg-base-100 bg-cover bg-center shadow-sm"
+          style={{ backgroundImage: "url('/bg.png')" }}
+        >
+          <div className="card-body">
+            {/* Heading */}
+            <div className="mb-7 text-center">
+              <h1 className="text-3xl font-semibold tracking-tight text-gray-900">
+                Welcome back
+              </h1>
+
+              <p className="mt-2 text-sm text-gray-500">
+                Sign in to manage your money smarter.
+              </p>
+            </div>
+
+            {/* Form */}
+            <form className="space-y-5" onSubmit={handleSubmit}>
+              {/* Email */}
+              <div>
+                <label className="mb-2 block text-sm font-medium text-gray-700">
+                  Email address
+                </label>
+
+                <input
+                  type="email"
+                  placeholder="Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className="input input-sm w-full border-gray-200 bg-white text-gray-900 placeholder:text-gray-400 focus:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-100"
+                />
+              </div>
+              {/* Password */}
+              <div>
+                <label className="mb-2 block text-sm font-medium text-gray-700">
+                  Password
+                </label>
+
+                <input
+                  type="password"
+                  placeholder="Enter your password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                  className="input input-sm w-full border-gray-200 bg-white text-gray-900 placeholder:text-gray-400 focus:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-100"
+                />
+              </div>
+
+              {/* Remember + Forgot password */}
+              <div className="flex items-center justify-between">
+                <label className="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    className="h-4 w-4 accent-orange-500"
+                  />
+
+                  <span className="text-xs text-gray-500">Remember me</span>
+                </label>
+
+                <a
+                  href="/forgot-password"
+                  className="text-xs font-medium text-orange-500 hover:text-orange-600"
+                >
+                  Forgot password?
+                </a>
+              </div>
+
+              {/* Button */}
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full rounded-xl bg-gray-900 py-3 text-sm font-medium text-white transition hover:bg-orange-500 disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                {loading ? "Signing in..." : "Sign in"}
+              </button>
+            </form>
+
+            {/* Register */}
+            <p className="mt-6 text-center text-sm text-gray-500">
+              Don't have an account?{" "}
+              <a
+                href="/register"
+                className="font-medium text-orange-500 hover:text-orange-600"
+              >
+                Create account
+              </a>
+            </p>
+          </div>
+        </div>
+
+        {/* Bottom text */}
+        <p className="mt-6 text-center text-xs text-gray-500">
+          Take control of your money with Montra.
+        </p>
+      </div>
+    </main>
+  );
+};
+
+export default Login;
