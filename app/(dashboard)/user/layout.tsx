@@ -1,12 +1,28 @@
 import React from "react";
 import Header from "@/components/userUI/Header";
 import Sidebar from "@/components/userUI/Sidebar";
+import prisma from "@/lib/prisma";
+import { getCurrentUser } from "@/lib/auth";
 
-export default function DashboardLayout({
+export default async function DashboardLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const currentUser = await getCurrentUser();
+
+  const user = currentUser
+    ? await prisma.user.findUnique({
+        where: {
+          id: currentUser.userId,
+        },
+        select: {
+          id: true,
+          name: true,
+          email: true,
+        },
+      })
+    : null;
   return (
     <div className="min-h-screen bg-[#f6f7f9]">
       {/* Sidebar */}
@@ -15,7 +31,7 @@ export default function DashboardLayout({
       {/* Right side */}
       <div className="lg:ml-64">
         {/* Header */}
-        <Header />
+        <Header user={user} />
 
         {/* Page content */}
         <main className="px-6 py-6">{children}</main>

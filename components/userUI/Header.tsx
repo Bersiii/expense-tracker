@@ -4,17 +4,31 @@ import React from "react";
 import Image from "next/image";
 import { Search, ChevronDown } from "lucide-react";
 
-const Header = () => {
+
+
+type User = {
+  id: string;
+  name: string | null;
+  email: string;
+  gender: string | null;
+  profilePic: string | null;
+  role: string;
+  createdAt: Date;
+};
+
+type HeaderProps = {
+  user: User | null;
+};
+
+const Header = ({ user }: HeaderProps) => {
   return (
     <header className="sticky top-0 z-30 px-6 pt-4">
       <div className="flex h-[64px] items-center justify-between rounded-2xl border border-gray-200 bg-white/80 px-6 shadow-sm backdrop-blur-md">
         {/* LEFT */}
         <div className="flex items-center gap-4">
-          
-
           <div className="hidden border-l border-gray-200 pl-4 md:block">
             <p className="text-sm font-medium text-slate-900">
-              Welcome back, John! 👋
+              Welcome back, {user?.name || "User"}! 👋
             </p>
           </div>
         </div>
@@ -46,7 +60,9 @@ const Header = () => {
               </div>
 
               <div className="hidden text-left sm:block">
-                <p className="text-sm font-medium text-slate-900">John</p>
+                <p className="text-sm font-medium text-slate-900">
+                  {user?.name || "User"}
+                </p>
 
                 <p className="text-xs text-slate-900">User</p>
               </div>
