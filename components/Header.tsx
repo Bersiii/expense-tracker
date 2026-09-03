@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const Header = () => {
   return (
@@ -9,16 +10,19 @@ const Header = () => {
       <nav className="mx-auto flex h-[64px] max-w-[1200px] items-center justify-between rounded-2xl border border-gray-200 bg-#aaabb0 px-6 shadow-sm backdrop-blur-md">
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <img
+          <Image
             src="/logo.png"
             alt="Montra logo"
-            className="h-20 w-30 object-contain"
+            width={120}
+            height={80}
+            className="object-contain"
           />
         </div>
 
         {/* Navigation */}
         <div className="hidden items-center gap-9 md:flex">
           <a
+            id="home"
             href="#home"
             className="text-[13px] text-gray-600 transition hover:text-gray-900"
           >

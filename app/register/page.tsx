@@ -56,10 +56,12 @@ const Register = () => {
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="flex items-center gap-2  justify-center">
-          <img
+          <Image
             src="/logo.png"
             alt="Montra logo"
-            className="h-20 w-30 object-contain "
+            width={120}
+            height={80}
+            className="h-20 w-30 object-contain"
           />
         </div>
         <div

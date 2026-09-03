@@ -1,48 +1,49 @@
-'use client';
+"use client";
 
-import React , { useState}from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const Login = () => {
-  const [email,setEmail] = useState("");
-  const [password,setPassword] = useState(""); 
-  const [error,setError] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const router = useRouter();
-  const [loading,setLoading] = useState(false); 
+  const [loading, setLoading] = useState(false);
 
-const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
-  setError("");
-  setLoading(true);
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setError("");
+    setLoading(true);
 
-  try {
-    const response = await fetch("/api/auth/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email,
-        password,
-      }),
-    });
+    try {
+      const response = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+      });
 
-    const data = await response.json();
+      const data = await response.json();
 
-    if (!response.ok) {
-      setError(data.error || "Login failed");
-      return;
+      if (!response.ok) {
+        setError(data.error || "Login failed");
+        return;
+      }
+
+      // Login successful
+      router.push("/dashboard");
+    } catch (error) {
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
     }
+  };
 
-    // Login successful
-    router.push("/dashboard");
-  } catch (error) {
-    setError("Something went wrong. Please try again.");
-  } finally {
-    setLoading(false);
-  }
-};
-  
   return (
     <main
       className="flex min-h-screen items-center justify-center bg-cover bg-center bg-no-repeat px-6"
@@ -51,11 +52,9 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="flex items-center justify-center">
-          <img
-            src="/logo.png"
-            alt="Montra logo"
-            className="h-20 w-30 object-contain "
-          />
+          <a href="#home">
+            <Image src="/logo.png" alt="Montra logo" width={120} height={80} />
+          </a>
         </div>
 
         <div
@@ -130,7 +129,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full rounded-xl bg-gray-900 py-3 text-sm font-medium   text-white transition hover:bg-[#cbcacf] disabled:cursor-not-allowed disabled:opacity-50"
+                className="w-full rounded-xl bg-gray-900 py-3 text-sm font-medium text-white transition  text-white transition hover:bg-[#cbcacf] disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {loading ? "Signing in..." : "Sign in"}
               </button>
