@@ -5,6 +5,7 @@ import {
   SpendingOverview,
   ExpenseByCategory,
 } from "@/components/userUI/overview";
+import RecentExpenses from "@/components/userUI/RecentExpenses";
 
 type Expense = {
   id: number;
@@ -132,6 +133,7 @@ const Overview = () => {
           <ExpenseByCategory expense={expense} />
         </div>
       </div>
+      <RecentExpenses expense={expense} />
     </div>
   );
 };
