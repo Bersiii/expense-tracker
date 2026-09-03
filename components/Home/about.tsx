@@ -10,7 +10,7 @@ const About = () => {
             id="about"
             className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl"
           >
-             <span className="text-orange-500">A</span>bout
+             <span className="text-teal-600">A</span>bout
           </h1>
           <p className="mt-4 text-lg text-gray-600">
             We believe that taking control of your money shouldn't feel like a
@@ -44,7 +44,7 @@ const About = () => {
             </h3>
             <ul className="space-y-4 text-gray-600">
               <li className="flex items-start gap-3">
-                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-100 text-sm font-semibold text-orange-600">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-teal-100 text-sm font-semibold text-teal-600">
                   ✓
                 </span>
                 <span>
@@ -53,7 +53,7 @@ const About = () => {
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-100 text-sm font-semibold text-orange-600">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-teal-100 text-sm font-semibold text-teal-600">
                   ✓
                 </span>
                 <span>
@@ -62,7 +62,7 @@ const About = () => {
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-100 text-sm font-semibold text-orange-600">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-teal-100 text-sm font-semibold text-teal-600">
                   ✓
                 </span>
                 <span>

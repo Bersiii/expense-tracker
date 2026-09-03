@@ -22,8 +22,8 @@ const RecentExpenses = ({ expense }: RecentExpensesProps) => {
     .slice(0, 5);
 
   const categoryColors: Record<string, string> = {
-    Food: "bg-orange-50 text-orange-500",
-    "Food & Dining": "bg-orange-50 text-orange-500",
+    Food: "bg-teal-50 text-teal-500",
+    "Food & Dining": "bg-teal-50 text-teal-500",
     Transport: "bg-blue-50 text-blue-500",
     Shopping: "bg-green-50 text-green-500",
     Bills: "bg-purple-50 text-purple-500",

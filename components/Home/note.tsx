@@ -7,7 +7,7 @@ const Note = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 divide-y md:divide-y-0 md:divide-x divide-base-200">
           {/* Item 1: Track expenses */}
           <div className="flex items-start gap-4 pt-4 md:pt-0 md:px-4 first:pl-0">
-            <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center text-orange-500">
+            <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-teal-500/10 flex items-center justify-center text-teal-500">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="w-6 h-6"
@@ -41,7 +41,7 @@ const Note = () => {
 
           {/* Item 2: Set budgets */}
           <div className="flex items-start gap-4 pt-4 md:pt-0 md:px-4">
-            <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center text-orange-500">
+            <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-teal-500/10 flex items-center justify-center text-teal-500">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="w-6 h-6"
@@ -69,7 +69,7 @@ const Note = () => {
 
           {/* Item 3: Smart insights */}
           <div className="flex items-start gap-4 pt-4 md:pt-0 md:px-4 last:pr-0">
-            <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center text-orange-500">
+            <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-teal-500/10 flex items-center justify-center text-teal-500">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="w-6 h-6"

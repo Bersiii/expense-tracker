@@ -11,16 +11,16 @@ export default function Expenses() {
               id="about"
               className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl"
             >
-              <span className="text-orange-500">E</span>xpenses
+              <span className="text-teal-500">E</span>xpenses
             </h1>
             <p className="mt-1 text-sm text-gray-500">
               Track, manage, and analyze your spending history in real time.
             </p>
           </div>
-          <button className="inline-flex items-center justify-center rounded-xl bg-orange-500 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-orange-600">
+          <button className="inline-flex items-center justify-center rounded-xl bg-teal-500 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-teal-600">
             + Add Expense
           </button>
-        </div>
+        </div> 
 
         {/* Overview Stats Cards */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mb-10">
@@ -65,7 +65,7 @@ export default function Expenses() {
               <input
                 type="text"
                 placeholder="Search expenses..."
-                className="rounded-lg border border-gray-200 px-3 py-1.5 text-sm outline-none focus:border-orange-500"
+                className="rounded-lg border border-gray-200 px-3 py-1.5 text-sm outline-none focus:border-teal-500"
               />
             </div>
           </div>
@@ -86,7 +86,7 @@ export default function Expenses() {
                     Supermarket Groceries
                   </td>
                   <td className="px-6 py-4">
-                    <span className="rounded-full bg-orange-50 px-2.5 py-1 text-xs font-medium text-orange-600">
+                    <span className="rounded-full bg-teal-50 px-2.5 py-1 text-xs font-medium text-teal-600">
                       Food & Dining
                     </span>
                   </td>

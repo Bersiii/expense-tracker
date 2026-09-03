@@ -52,8 +52,8 @@ const ExpenseTable = ({ expense }: ExpenseTableProps) => {
 
   // Category colors
   const categoryColors: Record<string, string> = {
-    Food: "bg-orange-50 text-orange-500",
-    "Food & Dining": "bg-orange-50 text-orange-500",
+    Food: "bg-teal-50 text-teal-500",
+    "Food & Dining": "bg-teal-50 text-teal-500",
 
     Transport: "bg-blue-50 text-blue-500",
 
@@ -300,7 +300,7 @@ const ExpenseTable = ({ expense }: ExpenseTableProps) => {
                 onClick={() => setCurrentPage(page)}
                 className={`flex h-7 w-7 items-center justify-center rounded-md border text-xs ${
                   currentPage === page
-                    ? "border-orange-500 text-orange-500"
+                    ? "border-teal-500 text-teal-500"
                     : "border-gray-200 text-gray-500"
                 }`}
               >

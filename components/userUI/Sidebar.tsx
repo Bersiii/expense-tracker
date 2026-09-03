@@ -1,12 +1,12 @@
 'use client';
 
-import React from "react";
+
 import Image from "next/image";
 import {
   LayoutDashboard,
   Receipt,
   PlusCircle,
-  WalletCards,
+
   Tags,
   Settings,
 } from "lucide-react";
@@ -74,7 +74,7 @@ const Sidebar = () => {
                     href={item.href}
                     className={`flex items-center gap-3 rounded-xl px-4 py-3 transition-all ${
                       active
-                        ? "bg-white text-orange-500 shadow-sm"
+                        ? "bg-white text-teal-500 shadow-sm"
                         : "text-slate-700 hover:bg-white/50"
                     }`}
                   >

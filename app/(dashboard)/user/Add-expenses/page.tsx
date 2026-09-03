@@ -79,7 +79,7 @@ const AddExpense = () => {
         <div className="rounded-2xl border border-gray-200 bg-white shadow-sm">
           <div className="border-b border-gray-100 px-6 py-5">
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-orange-100 text-orange-500">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-100 text-teal-500">
                 <PlusCircle size={21} />
               </div>
 
@@ -113,7 +113,7 @@ const AddExpense = () => {
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 required
-                className="input input-bordered w-full bg-white text-gray-900 placeholder:text-gray-400 focus:border-orange-400 focus:outline-none"
+                className="input input-bordered w-full bg-white text-gray-900 placeholder:text-gray-400 focus:border-teal-400 focus:outline-none"
               />
             </div>
 
@@ -125,7 +125,7 @@ const AddExpense = () => {
                   Amount
                 </label>
 
-                <label className="input input-bordered flex w-full items-center gap-2 bg-white focus-within:border-orange-400">
+                <label className="input input-bordered flex w-full items-center gap-2 bg-white focus-within:border-teal-400">
                   <span className="text-gray-500">$</span>
 
                   <input
@@ -151,7 +151,7 @@ const AddExpense = () => {
                   value={category}
                   onChange={(e) => setCategory(e.target.value)}
                   required
-                  className="select select-bordered w-full bg-white text-gray-900 focus:border-orange-400 focus:outline-none"
+                  className="select select-bordered w-full bg-white text-gray-900 focus:border-teal-400 focus:outline-none"
                 >
                   <option value="">Select category</option>
                   <option value="Food">Food</option>
@@ -176,7 +176,7 @@ const AddExpense = () => {
                 type="date"
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
-                className="input input-bordered w-full bg-white text-gray-900 focus:border-orange-400 focus:outline-none"
+                className="input input-bordered w-full bg-white text-gray-900 focus:border-teal-400 focus:outline-none"
               />
 
               <p className="mt-1 text-xs text-gray-400">
@@ -196,7 +196,7 @@ const AddExpense = () => {
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 rows={4}
-                className="textarea textarea-bordered w-full resize-none bg-white text-gray-900 placeholder:text-gray-400 focus:border-orange-400 focus:outline-none"
+                className="textarea textarea-bordered w-full resize-none bg-white text-gray-900 placeholder:text-gray-400 focus:border-teal-400 focus:outline-none"
               />
             </div>
 
@@ -214,7 +214,7 @@ const AddExpense = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="btn border-none bg-gray-900 text-white hover:bg-orange-500 disabled:cursor-not-allowed disabled:opacity-50"
+                className="btn border-none bg-gray-900 text-white hover:bg-teal-500 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {loading ? (
                   <>

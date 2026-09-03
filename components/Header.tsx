@@ -23,14 +23,14 @@ const Header = () => {
         <div className="hidden items-center gap-9 md:flex">
           <a
             id="home"
-            href="#home"
+            href="#"
             className="text-[13px] text-gray-600 transition hover:text-gray-900"
           >
             Home
           </a>
 
           <a
-            href="#about"
+            href="#"
             className="text-[13px] text-gray-600 transition hover:text-gray-900"
           >
             About
@@ -39,7 +39,7 @@ const Header = () => {
           
 
           <a
-            href="#contact"
+            href="#"
             className="text-[13px] text-gray-600 transition hover:text-gray-900"
           >
             Contact
@@ -47,7 +47,7 @@ const Header = () => {
         </div>
 
         <details className="relative">
-          <summary className="cursor-pointer list-none rounded-full border border-gray-200 bg-#aaabb0 px-5 py-2.5 text-sm font-medium text-gray-800 shadow-sm transition hover:border-orange-300 hover:text-orange-500">
+          <summary className="cursor-pointer list-none rounded-full border border-gray-200 bg-#aaabb0 px-5 py-2.5 text-sm font-medium text-gray-800 shadow-sm transition hover:border-teal-300 hover:text-teal-500">
             Get started - for free
           </summary>
 
@@ -55,7 +55,7 @@ const Header = () => {
             <li>
               <a
                 href="/register"
-                className="block rounded-lg px-4 py-2 text-sm text-gray-700 transition hover:bg-orange-50 hover:text-orange-500"
+                className="block rounded-lg px-4 py-2 text-sm text-gray-700 transition hover:bg-teal-50 hover:text-teal-500"
               >
                 Sign Up
               </a>
@@ -64,7 +64,7 @@ const Header = () => {
             <li>
               <a
                 href="/login"
-                className="block rounded-lg px-4 py-2 text-sm text-gray-700 transition hover:bg-orange-50 hover:text-orange-500"
+                className="block rounded-lg px-4 py-2 text-sm text-gray-700 transition hover:bg-teal-50 hover:text-teal-500"
               >
                 Log In
               </a>

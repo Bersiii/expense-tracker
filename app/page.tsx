@@ -24,7 +24,7 @@ const Page = () => {
           >
             Take control of
             <br />
-            your <span className="text-orange-500">money</span>
+            your <span className="text-teal-600">money</span>
           </h1>
 
           {/* Description */}
@@ -37,7 +37,7 @@ const Page = () => {
           <div className="mt-9 flex flex-wrap gap-4">
             <Link
               href="/register"
-              className="rounded-full bg-orange-500 px-8 py-4 text-base font-medium text-white shadow-lg shadow-orange-500/20 transition hover:bg-orange-600"
+              className="rounded-full bg-teal-600 not-only:px-8 py-4 text-base font-medium text-white shadow-lg shadow-orange-500/20 transition hover:bg-teal-800"
             >
               Get started - for free
             </Link>
