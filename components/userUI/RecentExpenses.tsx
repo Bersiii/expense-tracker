@@ -53,12 +53,7 @@ const RecentExpenses = ({ expense }: RecentExpensesProps) => {
       <div className="mb-5 flex items-center justify-between">
         <h2 className="text-sm font-semibold text-gray-900">Recent Expenses</h2>
 
-        <button
-          className="text-xs font-medium text-gray-500 hover:text-orange-500"
-          type="button"
-        >
-          View all →
-        </button>
+         
       </div>
 
       {/* Empty state */}

@@ -33,11 +33,7 @@ const Sidebar = () => {
       href: "/user/Add-expenses", 
       icon: PlusCircle,
     },
-    {
-      name: "Budgets",
-      href: "/user/budgets",
-      icon: WalletCards,
-    },
+    
     {
       name: "Categories",
       href: "/user/Categories",

@@ -22,8 +22,8 @@ type HeaderProps = {
 
 const Header = ({ user }: HeaderProps) => {
   return (
-    <header className="sticky top-0 z-30 px-6 pt-4">
-      <div className="flex h-[64px] items-center justify-between rounded-2xl border border-gray-200 bg-white/80 px-6 shadow-sm backdrop-blur-md">
+    <header className="sticky top-0 z-30 px-6 pt-0">
+      <div className="flex h-[64px] items-center justify-between rounded-2xl border border-gray-200  px-6 shadow-sm backdrop-blur-md">
         {/* LEFT */}
         <div className="flex items-center gap-4">
           <div className="hidden border-l border-gray-200 pl-4 md:block">
