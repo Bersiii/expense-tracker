@@ -2,6 +2,8 @@ import SettingsHeader from "@/components/userUI/SettingsHeader";
 import ProfileSettings from "@/components/userUI/ProfileSettings";
 import prisma from "@/lib/prisma";
 import { getCurrentUser } from "@/lib/auth";
+import PasswordSettings from "@/components/userUI/PasswordSettings";
+
 
  export default async function SettingsPage () {
   const currentUser = await getCurrentUser();
@@ -25,10 +27,10 @@ import { getCurrentUser } from "@/lib/auth";
       <SettingsHeader />
 
       <div className="mx-auto mt-8 max-w-5xl space-y-8">
-        {/* ================= PROFILE ================= */}
+       
         <ProfileSettings name={user?.name || ""} email={user?.email || ""} />
 
-        {/* ================= APPEARANCE ================= */}
+        <PasswordSettings />
       </div>
     </div>
   );
