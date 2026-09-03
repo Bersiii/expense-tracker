@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "@/components/user-dashboard/header";
-import Sidebar from "@/components/user-dashboard/sidebar";
+import Header from "@/components/userUI/Header";
+import Sidebar from "@/components/userUI/Sidebar";
 
 const Dashboard = () => {
   return (
@@ -9,7 +9,13 @@ const Dashboard = () => {
       style={{ backgroundImage: "url('/bg.jpg')" }}
     >
       <Header />
-      <Sidebar />
+      <div className="flex min-h-screen bg-[#f6f7f9]">
+        {/* LEFT SIDEBAR */}
+        <Sidebar />
+
+        {/* RIGHT SIDE */}
+        
+      </div>
     </div>
   );
 };

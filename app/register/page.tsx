@@ -40,7 +40,7 @@ const Register = () => {
       }
 
       // Registration successful
-      router.push("/dashboard");
+       router.push("/user");
     } catch (error) {
       setError("Something went wrong. Please try again.");
     } finally {

@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <div
       className="navbar shadow-sm mx-auto flex h-[64px] max-w-[1200px] items-center
-      justify-between rounded-2xl border border-gray-200 bg-#aaabb0 px-6
+      justify-between rounded-2xl border border-gray-200 bg-[#aaabb0] px-6
       backdrop-blur-md"
     >
       <div className="flex items-center gap-60">
@@ -16,9 +16,12 @@ const Header = () => {
           height={80}
           className="object-contain"
         />
+       
 
         <div className="flex-1">
-          <p className="btn btn-ghost text-xl text-black">Welcome Back, John! 👋</p>
+          <p className="btn btn-ghost text-xl text-black">
+            Welcome Back, John! 👋
+          </p>
           <p className="text-sm text-gray-500">
             Ready to manage your expenses today?
           </p>
