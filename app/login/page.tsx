@@ -91,7 +91,7 @@ const Login = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="input input-sm w-full border-gray-200 bg-white text-gray-900 placeholder:text-gray-400 focus:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-100"
+                  className="input input-sm w-full border-gray-200 bg-white text-gray-900 placeholder:text-gray-400 focus:border-teal-400 focus:outline-none focus:ring-2 focus:ring-teal-100"
                 />
               </div>
               {/* Password */}
@@ -106,7 +106,7 @@ const Login = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  className="input input-sm w-full border-gray-200 bg-white text-gray-900 placeholder:text-gray-400 focus:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-100"
+                  className="input input-sm w-full border-gray-200 bg-white text-gray-900 placeholder:text-gray-400 focus:border-teal-400 focus:outline-none focus:ring-2 focus:ring-teal-100"
                 />
               </div>
 
@@ -115,7 +115,7 @@ const Login = () => {
                 <label className="flex items-center gap-2">
                   <input
                     type="checkbox"
-                    className="h-4 w-4 accent-orange-500"
+                    className="h-4 w-4 accent-teal-500"
                   />
 
                   <span className="text-xs text-gray-500">Remember me</span>
@@ -123,7 +123,7 @@ const Login = () => {
 
                 <a
                   href="/forgot-password"
-                  className="text-xs font-medium text-orange-500 hover:text-orange-600"
+                  className="text-xs font-medium text-teal-500 hover:text-teal-600"
                 >
                   Forgot password?
                 </a>
@@ -144,7 +144,7 @@ const Login = () => {
               Don't have an account?{" "}
               <a
                 href="/register"
-                className="font-medium text-orange-500 hover:bg-[#cbcacf]"
+                className="font-medium text-teal-500 hover:bg-[#cbcacf]"
               >
                 Create account
               </a>

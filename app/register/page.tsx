@@ -98,7 +98,7 @@ const Register = () => {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   required
-                  className="input input-sm w-full border-gray-200 bg-white text-gray-900 placeholder:text-gray-400 focus:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-100"
+                  className="input input-sm w-full border-gray-200 bg-white text-gray-900 placeholder:text-gray-400 focus:border-teal-400 focus:outline-none focus:ring-2 focus:ring-teal-100"
                 />
               </div>
 
@@ -115,7 +115,7 @@ const Register = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="input input-sm w-full border-gray-200 bg-white text-gray-900 placeholder:text-gray-400 focus:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-100"
+                  className="input input-sm w-full border-gray-200 bg-white text-gray-900 placeholder:text-gray-400 focus:border-teal-400 focus:outline-none focus:ring-2 focus:ring-teal-100"
                 />
               </div>
 
@@ -132,7 +132,7 @@ const Register = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  className="input input-sm w-full border-gray-200 bg-white text-gray-900 placeholder:text-gray-400 focus:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-100"
+                  className="input input-sm w-full border-gray-200 bg-white text-gray-900 placeholder:text-gray-400 focus:border-teal-400 focus:outline-none focus:ring-2 focus:ring-teal-100"
                 />
               </div>
 
@@ -141,16 +141,16 @@ const Register = () => {
                 <input
                   type="checkbox"
                   required
-                  className="mt-1 h-4 w-4 accent-orange-500"
+                  className="mt-1 h-4 w-4 accent-teal-500"
                 />
 
                 <p className="text-xs leading-5 text-gray-500">
                   I agree to{" "}
-                  <a href="#" className="text-orange-500 hover:text-orange-600">
+                  <a href="#" className="text-teal-500 hover:text-teal-600">
                     Terms
                   </a>{" "}
                   and{" "}
-                  <a href="#" className="text-orange-500 hover:text-orange-600">
+                  <a href="#" className="text-teal-500 hover:text-teal-600">
                     Privacy Policy
                   </a>
                 </p>
@@ -171,7 +171,7 @@ const Register = () => {
               Already have an account?{" "}
               <a
                 href="/login"
-                className="font-medium text-orange-500 hover:bg-[#cbcacf]"
+                className="font-medium text-teal-500 hover:bg-[#cbcacf]"
               >
                 Log in
               </a>

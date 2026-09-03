@@ -194,7 +194,7 @@ const CategoriesPage = () => {
 
                         {/* Amount */}
                         <div className="text-right">
-                          <p className="font-semibold text-gray-900">
+                          <p className="font-semibold text-teal-900">
                             ${data.amount.toFixed(2)}
                           </p>
 
@@ -205,9 +205,9 @@ const CategoriesPage = () => {
                       </div>
 
                       {/* Progress bar */}
-                      <div className="mt-4 h-2 w-full rounded-full bg-gray-100">
+                      <div className="mt-4 h-2 w-full rounded-full bg-teal-100">
                         <div
-                          className="h-2 rounded-full bg-black transition-all"
+                          className="h-2 rounded-full bg-teal-500 transition-all"
                           style={{
                             width: `${percentage}%`,
                           }}
