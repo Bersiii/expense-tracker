@@ -1,35 +1,104 @@
+'use client';
+
 import React from "react";
+import Image from "next/image";
+import {
+  LayoutDashboard,
+  Receipt,
+  PlusCircle,
+  WalletCards,
+  Tags,
+  Settings,
+} from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Sidebar = () => {
-  return (
-    <div className="drawer lg:drawer-open">
-      <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
 
-      <div className="drawer-side">
-        <ul className="menu bg-[#c0bfc4] min-h-full w-64">
-          {/* Sidebar content here */}
-          <li>
-            <a> Overview1</a>
-          </li>
-          <li>
-            <a>Expenses</a>
-          </li>
-          <li>
-            <a>Add Expenses</a>
-          </li>
-          <li>
-            <a>Budgets</a>
-          </li>
-          <li>
-            <a>Categories</a>
-          </li>
-          <li>
-            <a>Settings</a>
-          </li>
-          
-        </ul>
+  const pathname = usePathname();
+
+  const menuItems = [
+    {
+      name: "Overview",
+      href: "/user",
+      icon: LayoutDashboard,
+    },
+    {
+      name: "Expenses",
+      href: "/user/expenses",
+      icon: Receipt,
+    },
+    {
+      name: "Add Expense",
+      href: "/user/Add-expenses", 
+      icon: PlusCircle,
+    },
+    {
+      name: "Budgets",
+      href: "/user/budgets",
+      icon: WalletCards,
+    },
+    {
+      name: "Categories",
+      href: "/user/Categories",
+      icon: Tags,
+    },
+    {
+      name: "Settings",
+      href: "/user/settings",
+      icon: Settings,
+    },
+  ];
+
+  return (
+    <aside className="fixed left-0 top-0 z-40 hidden h-screen w-64  bg-[#c0bfc4] lg:block">
+      <div className="flex h-full flex-col">
+        <div className="p-5 pl-10  items-center justify-center">
+          <Image
+            src="/logo.png"
+            alt="Montra logo"
+            width={120}
+            height={60}
+            className="object-contain"
+          />
+        </div>
+        {/* Sidebar menu */}
+        <nav className="flex-1 px-4 pt-5 ">
+          <ul className="menu w-full gap-2 pt-0  ">
+            {menuItems.map((item) => {
+              const Icon = item.icon;
+
+              const active =
+                pathname === item.href ||
+                (item.href !== "/" && pathname.startsWith(item.href));
+
+              return (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className={`flex items-center gap-3 rounded-xl px-4 py-3 transition-all ${
+                      active
+                        ? "bg-white text-orange-500 shadow-sm"
+                        : "text-slate-700 hover:bg-white/50"
+                    }`}
+                  >
+                    <Icon size={20} />
+                    <span>{item.name}</span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+
+        {/* Logout */}
+        <div className=" p-4">
+          <button className="w-full rounded-xl px-4 py-3 text-left text-sm text-slate-700 hover:bg-white/50">
+            Logout
+          </button>
+        </div>
       </div>
-    </div>
+    </aside>
   );
 };
 

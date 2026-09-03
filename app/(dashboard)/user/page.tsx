@@ -1,23 +1,12 @@
-import React from "react";
-import Header from "@/components/userUI/Header";
-import Sidebar from "@/components/userUI/Sidebar";
+import React from 'react'
 
-const Dashboard = () => {
+const Overview = () => {
   return (
-    <div
-      className="min-h-screen bg-white bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/bg.jpg')" }}
-    >
-      <Header />
-      <div className="flex min-h-screen bg-[#f6f7f9]">
-        {/* LEFT SIDEBAR */}
-        <Sidebar />
-
-        {/* RIGHT SIDE */}
-        
-      </div>
+    <div className="p-8 border-2 border-yellow-700">
+      <h1 className="text-2xl font-bold mb-4 text-black">Overview</h1>
+      <p>Welcome to your dashboard!</p>
     </div>
-  );
-};
+  )
+}
 
-export default Dashboard;
+export default Overview;
