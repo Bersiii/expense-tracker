@@ -74,3 +74,73 @@ export async function POST(request: NextRequest) {
     );
   }
 }
+
+
+// DELETE /api/expense?id=6
+export async function DELETE(request: NextRequest) {
+  try {
+    // Get currently logged-in user
+    const currentUser = await getCurrentUser();
+
+    if (!currentUser) {
+      return NextResponse.json(
+        { error: "Unauthorized" },
+        { status: 401 }
+      );
+    }
+
+    // Get expense ID from URL
+    const { searchParams } = new URL(request.url);
+    const id = searchParams.get("id");
+
+    if (!id) {
+      return NextResponse.json(
+        { error: "Expense ID is required" },
+        { status: 400 }
+      );
+    }
+
+    const expenseId = Number(id);
+
+    if (isNaN(expenseId)) {
+      return NextResponse.json(
+        { error: "Invalid expense ID" },
+        { status: 400 }
+      );
+    }
+
+    // Find the expense AND make sure it belongs to this user
+    const expense = await prisma.expense.findFirst({
+      where: {
+        id: expenseId,
+        userId: currentUser.userId,
+      },
+    });
+
+    if (!expense) {
+      return NextResponse.json(
+        { error: "Expense not found" },
+        { status: 404 }
+      );
+    }
+
+    // Delete the expense
+    await prisma.expense.delete({
+      where: {
+        id: expenseId,
+      },
+    });
+
+    return NextResponse.json({
+      message: "Expense deleted successfully",
+    });
+
+  } catch (error) {
+    console.error("Delete expense error:", error);
+
+    return NextResponse.json(
+      { error: "Something went wrong" },
+      { status: 500 }
+    );
+  }
+}
