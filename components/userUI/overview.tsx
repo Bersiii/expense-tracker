@@ -133,7 +133,7 @@ export const SpendingOverview = ({ expense }: Props) => {
                 y1={y}
                 x2={width - paddingX}
                 y2={y}
-                stroke="#eeeeee"
+                stroke="#ccfbf1"
                 strokeWidth="1"
               />
             );
@@ -142,9 +142,9 @@ export const SpendingOverview = ({ expense }: Props) => {
           {/* Gradient area */}
           <defs>
             <linearGradient id="expenseGradient" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#ff7a00" stopOpacity="0.28" />
+              <stop offset="0%" stopColor="#14b8a6" stopOpacity="0.28" />
 
-              <stop offset="100%" stopColor="#ff7a00" stopOpacity="0.02" />
+              <stop offset="100%" stopColor="#14b8a6" stopOpacity="0.02" />
             </linearGradient>
           </defs>
 
@@ -155,7 +155,7 @@ export const SpendingOverview = ({ expense }: Props) => {
           <path
             d={linePath}
             fill="none"
-            stroke="#ff6b00"
+            stroke="#14b8a6"
             strokeWidth="3"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -168,7 +168,7 @@ export const SpendingOverview = ({ expense }: Props) => {
               cx={point.x}
               cy={point.y}
               r="4"
-              fill="#ff6b00"
+              fill="#14b8a6"
               stroke="white"
               strokeWidth="2"
             />
@@ -222,7 +222,7 @@ export const ExpenseByCategory = ({ expense }: Props) => {
 
   // Colors for the donut
   const colors = [
-    "#ff7a00",
+    "#14b8a6",
     "#4f8df7",
     "#48c78e",
     "#a78bfa",

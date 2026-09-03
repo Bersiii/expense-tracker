@@ -55,7 +55,7 @@ const Page = () => {
         <div className="flex w-full items-start justify-center lg:justify-end ">
           <div className="w-full max-w-[650px] ">
             <Image
-              src="/home.png"
+              src="/home1.png"
               alt="Montra financial dashboard"
               width={700}
               height={500}

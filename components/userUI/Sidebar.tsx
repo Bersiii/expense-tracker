@@ -51,7 +51,7 @@ const Sidebar = () => {
       <div className="flex h-full flex-col">
         <div className="p-5 pl-10  items-center justify-center">
           <Image
-            src="/logo.png"
+            src="/logo1.png"
             alt="Montra logo"
             width={120}
             height={60}

@@ -53,7 +53,7 @@ const Login = () => {
         {/* Logo */}
         <div className="flex items-center justify-center">
           <a href="#home">
-            <Image src="/logo.png" alt="Montra logo" width={120} height={80} />
+            <Image src="/logo1.png" alt="Montra logo" width={120} height={80} />
           </a>
         </div>
 

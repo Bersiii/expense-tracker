@@ -11,7 +11,7 @@ const Header = () => {
         {/* Logo */}
         <div className="flex items-center gap-2">
           <Image
-            src="/logo.png"
+            src="/logo1.png"
             alt="Montra logo"
             width={120}
             height={80}
