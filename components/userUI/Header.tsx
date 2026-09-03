@@ -5,22 +5,12 @@ import Image from "next/image";
 import { Search, ChevronDown } from "lucide-react";
 
 
-
-type User = {
-  id: string;
-  name: string | null;
+type ProfileSettingsProps = {
+  name: string;
   email: string;
-  gender: string | null;
-  profilePic: string | null;
-  role: string;
-  createdAt: Date;
 };
 
-type HeaderProps = {
-  user: User | null;
-};
-
-const Header = ({ user }: HeaderProps) => {
+const Header = ({ name, email }: ProfileSettingsProps) => {
   return (
     <header className="sticky top-0 z-30 px-6 pt-0">
       <div className="flex h-[64px] items-center justify-between rounded-2xl border border-gray-200  px-6 shadow-sm backdrop-blur-md">

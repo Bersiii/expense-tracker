@@ -31,7 +31,7 @@ export default async function DashboardLayout({
       {/* Right side */}
       <div className="lg:ml-64">
         {/* Header */}
-        <Header user={user} />
+        <Header name={user?.name || ""} email={user?.email || ""} />
 
         {/* Page content */}
         <main className="px-6 py-6">{children}</main>
