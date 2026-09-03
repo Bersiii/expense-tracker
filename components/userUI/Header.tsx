@@ -18,7 +18,7 @@ const Header = ({ name, email }: ProfileSettingsProps) => {
         <div className="flex items-center gap-4">
           <div className="hidden border-l border-gray-200 pl-4 md:block">
             <p className="text-sm font-medium text-slate-900">
-              Welcome back, {user?.name || "User"}! 👋
+              Welcome back, {name} 👋
             </p>
           </div>
         </div>
@@ -51,7 +51,7 @@ const Header = ({ name, email }: ProfileSettingsProps) => {
 
               <div className="hidden text-left sm:block">
                 <p className="text-sm font-medium text-slate-900">
-                  {user?.name || "User"}
+                  {name}
                 </p>
 
                 <p className="text-xs text-slate-900">User</p>
