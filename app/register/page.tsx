@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
+import Logo from "@/components/logo/logo";
 import { useRouter } from "next/navigation";
 
 const Register = () => {
@@ -40,7 +40,7 @@ const Register = () => {
       }
 
       // Registration successful
-       router.push("/user");
+      router.push("/user");
     } catch (error) {
       setError("Something went wrong. Please try again.");
     } finally {
@@ -54,16 +54,7 @@ const Register = () => {
       style={{ backgroundImage: "url('/bg.jpg')" }}
     >
       <div className="w-full max-w-md">
-        {/* Logo */}
-        <div className="flex items-center gap-2  justify-center">
-          <Image
-            src="/logo1.png"
-            alt="Montra logo"
-            width={120}
-            height={80}
-            className="h-20 w-30 object-contain"
-          />
-        </div>
+        <Logo />
         <div
           className="card w-96 bg-base-100 bg-cover bg-center shadow-sm"
           style={{ backgroundImage: "url('/bg.jpg')" }}

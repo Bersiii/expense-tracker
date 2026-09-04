@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
+import Logo from "@/components/logo/logo";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -50,12 +50,7 @@ const Login = () => {
       style={{ backgroundImage: "url('/bg.jpg')" }}
     >
       <div className="w-full max-w-md">
-        {/* Logo */}
-        <div className="flex items-center justify-center">
-          <a href="#home">
-            <Image src="/logo1.png" alt="Montra logo" width={120} height={80} />
-          </a>
-        </div>
+        <Logo />
 
         <div
           className="card w-96 bg-base-100 bg-cover bg-center shadow-sm"
@@ -113,10 +108,7 @@ const Login = () => {
               {/* Remember + Forgot password */}
               <div className="flex items-center justify-between">
                 <label className="flex items-center gap-2">
-                  <input
-                    type="checkbox"
-                    className="h-4 w-4 accent-teal-500"
-                  />
+                  <input type="checkbox" className="h-4 w-4 accent-teal-500" />
 
                   <span className="text-xs text-gray-500">Remember me</span>
                 </label>

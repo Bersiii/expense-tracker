@@ -55,6 +55,6 @@ const Home = () => {
       </div>
     </section>
   );
-}
+};
 
-export default Home
+export default Home;
