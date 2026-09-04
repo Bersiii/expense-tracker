@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <section className="mx-auto grid min-h-[400px] max-w-[1400px] mt-30 gap-10 px-8 py-0 lg:grid-cols-2 ">
       {/* LEFT SIDE */}
-      <div className="max-w-[600px] ">
+      <div className="max-w-[600px] " id="Home">
         {/* Heading */}
         <h1
           id="about"
@@ -32,7 +32,7 @@ const Home = () => {
           </Link>
 
           <Link
-            href="/about"
+            href="/LearnMore"
             className="rounded-full border border-white bg-white/65 px-8 py-4 text-base font-medium text-slate-800 shadow-sm backdrop-blur-sm transition hover:bg-white"
           >
             Learn more

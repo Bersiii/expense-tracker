@@ -1,49 +1,46 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Header = () => {
   return (
-    <header
-      id="contact"
-      className="w-full px-6 pt-0 mb-2 fixed top-0 left-0 z-50"
-    >
+    <header  className="w-full px-6 pt-0 mb-2 fixed top-0 left-0 z-50">
       <nav className="mx-auto flex h-[64px] max-w-[1200px] items-center justify-between rounded-2xl border border-gray-200 bg-#aaabb0 px-6 shadow-sm backdrop-blur-md">
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <Image
-            src="/logo1.png"
-            alt="Montra logo"
-            width={120}
-            height={80}
-            className="object-contain"
-          />
+          <Link href="#Home">
+            <Image
+              src="/logo1.png"
+              alt="Montra logo"
+              width={120}
+              height={80}
+              className="object-contain"
+            />
+          </Link>
         </div>
 
         {/* Navigation */}
         <div className="hidden items-center gap-9 md:flex">
-          <a
-            id="home"
-            href="#"
+          <Link
+            href="#Home"
             className="text-[13px] text-gray-600 transition hover:text-gray-900"
           >
             Home
-          </a>
+          </Link>
 
-          <a
-            href="#"
+          <Link
+            href="#About"
             className="text-[13px] text-gray-600 transition hover:text-gray-900"
           >
             About
-          </a>
+          </Link>
 
-          
-
-          <a
-            href="#"
+          <Link
+            href="#contact"
             className="text-[13px] text-gray-600 transition hover:text-gray-900"
           >
             Contact
-          </a>
+          </Link>
         </div>
 
         <details className="relative">

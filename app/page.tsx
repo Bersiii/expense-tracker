@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+import Header from "@/components/Home/Header";
 import Note from "@/components/Home/note";
 import Footer from "@/components/Home/footer";
 import About from "@/components/Home/about";

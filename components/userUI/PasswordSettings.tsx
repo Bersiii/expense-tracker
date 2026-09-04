@@ -81,7 +81,7 @@ const PasswordSettings = () => {
         {/* Form */}
         <form onSubmit={handleChangePassword} className="space-y-5 p-6">
           {/* Current Password */}
-          <div>
+          <div className="w-80">
             <label className="mb-2 block text-sm font-medium text-gray-700">
               Current Password
             </label>
@@ -97,7 +97,7 @@ const PasswordSettings = () => {
                 value={currentPassword}
                 onChange={(e) => setCurrentPassword(e.target.value)}
                 placeholder="Enter current password"
-                className="w-full rounded-lg border border-gray-200 bg-gray-50 py-2.5 pl-10 pr-10 text-sm text-gray-900 outline-none focus:border-gray-400"
+                className="input input-sm w-full border-gray-200 bg-white text-gray-900 placeholder:text-gray-400 focus:border-teal-400 focus:outline-none focus:ring-2 focus:ring-teal-100"
                 required
               />
 
@@ -112,7 +112,7 @@ const PasswordSettings = () => {
           </div>
 
           {/* New Password */}
-          <div>
+          <div className="w-80">
             <label className="mb-2 block text-sm font-medium text-gray-700">
               New Password
             </label>
@@ -128,7 +128,7 @@ const PasswordSettings = () => {
                 value={newPassword}
                 onChange={(e) => setNewPassword(e.target.value)}
                 placeholder="Enter new password"
-                className="w-full rounded-lg border border-gray-200 bg-gray-50 py-2.5 pl-10 pr-10 text-sm text-gray-900 outline-none focus:border-gray-400"
+                className="input input-sm w-full border-gray-200 bg-white text-gray-900 placeholder:text-gray-400 focus:border-teal-400 focus:outline-none focus:ring-2 focus:ring-teal-100"
                 required
               />
 
@@ -143,7 +143,7 @@ const PasswordSettings = () => {
           </div>
 
           {/* Confirm Password */}
-          <div>
+          <div className="w-80">
             <label className="mb-2 block text-sm font-medium text-gray-700">
               Confirm New Password
             </label>
@@ -159,7 +159,7 @@ const PasswordSettings = () => {
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 placeholder="Confirm new password"
-                className="w-full rounded-lg border border-gray-200 bg-gray-50 py-2.5 pl-10 pr-10 text-sm text-gray-900 outline-none focus:border-gray-400"
+                className="input input-sm w-full border-gray-200 bg-white text-gray-900 placeholder:text-gray-400 focus:border-teal-400 focus:outline-none focus:ring-2 focus:ring-teal-100"
                 required
               />
 
