@@ -25,15 +25,9 @@ export default async function DashboardLayout({
     : null;
   return (
     <div className="min-h-screen bg-[#f6f7f9]">
-      {/* Sidebar */}
       <Sidebar />
-
-      {/* Right side */}
       <div className="lg:ml-64">
-        {/* Header */}
         <Header name={user?.name || ""} email={user?.email || ""} />
-
-        {/* Page content */}
         <main className="px-6 py-6">{children}</main>
       </div>
     </div>

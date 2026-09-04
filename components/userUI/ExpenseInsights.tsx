@@ -41,9 +41,7 @@ const ExpenseInsights = ({ expense }: ExpenseInsightsProps) => {
 
   return (
     <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-      {/* =========================================
-          LARGEST EXPENSE
-      ========================================= */}
+      {/*LARGEST EXPENSE*/}
 
       <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
         <h2 className="text-sm font-semibold text-gray-900">Largest Expense</h2>
@@ -73,9 +71,7 @@ const ExpenseInsights = ({ expense }: ExpenseInsightsProps) => {
         )}
       </div>
 
-      {/* =========================================
-          EXPENSE SUMMARY
-      ========================================= */}
+      {/* EXPENSE SUMMARY */}
 
       <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
         <h2 className="text-sm font-semibold text-gray-900">Expense Summary</h2>
