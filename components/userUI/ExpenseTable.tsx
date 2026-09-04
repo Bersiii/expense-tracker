@@ -1,7 +1,9 @@
 "use client";
 
-import { Trash2 } from "lucide-react";
 import React, { useMemo, useState } from "react";
+import ExpensePagination from "./ExpensePagination";
+import ExpenseFilters from "./ExpenseFilters";
+import ExpenseList from "./ExpenseList";
 
 type Expense = {
   id: number;
@@ -55,7 +57,7 @@ const ExpenseTable = ({ expense }: ExpenseTableProps) => {
     Food: "bg-teal-50 text-teal-500",
     "Food & Dining": "bg-teal-50 text-teal-500",
 
-    Transport: "bg-blue-50 text-blue-500",
+    Transport: "bg-green-50 text-blue-500",
 
     Shopping: "bg-green-50 text-green-500",
 
@@ -113,215 +115,26 @@ const ExpenseTable = ({ expense }: ExpenseTableProps) => {
 
   return (
     <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
-      {/* ================================
-          FILTER BAR
-      ================================= */}
+      <ExpenseFilters
+        category={category}
+        categories={categories}
+        handleCategoryChange={handleCategoryChange}
+      />
+      <ExpenseList
+        displayedExpenses={displayedExpenses}
+        categoryColors={categoryColors}
+        formatDate={formatDate}
+        handleDelete={handleDelete}
+      />
 
-      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-gray-100 p-4">
-        <div className="flex flex-wrap gap-2">
-          {/* Category */}
-          <select
-            value={category}
-            onChange={(e) => handleCategoryChange(e.target.value)}
-            className="rounded-md border border-gray-200 bg-white px-3 py-2 text-xs text-gray-600 outline-none"
-          >
-            {categories.map((item) => (
-              <option key={item} value={item}>
-                {item}
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
-
-      {/* ================================
-          TABLE
-      ================================= */}
-
-      <div className="overflow-x-auto">
-        <table className="w-full min-w-[800px]">
-          {/* Header */}
-          <thead>
-            <tr className="border-b border-gray-100 bg-gray-50/50">
-              <th className="w-12 px-4 py-3">
-                <input
-                  type="checkbox"
-                  className="h-3.5 w-3.5 rounded border-gray-300"
-                />
-              </th>
-
-              <th className="px-4 py-3 text-left text-[10px] font-semibold uppercase text-gray-500">
-                Expense
-              </th>
-
-              <th className="px-4 py-3 text-left text-[10px] font-semibold uppercase text-gray-500">
-                Category
-              </th>
-
-              <th className="px-4 py-3 text-left text-[10px] font-semibold uppercase text-gray-500">
-                Amount
-              </th>
-
-              <th className="px-4 py-3 text-left text-[10px] font-semibold uppercase text-gray-500">
-                Date ↕
-              </th>
-
-              <th className="px-4 py-3 text-center text-[10px] font-semibold uppercase text-gray-500">
-                Actions
-              </th>
-            </tr>
-          </thead>
-
-          {/* Body */}
-          <tbody>
-            {displayedExpenses.length === 0 ? (
-              <tr>
-                <td
-                  colSpan={7}
-                  className="py-12 text-center text-sm text-gray-400"
-                >
-                  No expenses found.
-                </td>
-              </tr>
-            ) : (
-              displayedExpenses.map((item) => (
-                <tr
-                  key={item.id}
-                  className="border-b border-gray-100 transition hover:bg-gray-50"
-                >
-                  {/* Checkbox */}
-                  <td className="px-4 py-3">
-                    <input
-                      type="checkbox"
-                      className="h-3.5 w-3.5 rounded border-gray-300"
-                    />
-                  </td>
-
-                  {/* Expense */}
-                  <td className="px-4 py-3">
-                    <div className="flex items-center gap-3">
-                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gray-50 text-sm">
-                        {item.category === "Transport"
-                          ? "🚗"
-                          : item.category === "Shopping"
-                            ? "🛍️"
-                            : item.category === "Bills"
-                              ? "💡"
-                              : item.category === "Entertainment"
-                                ? "🎬"
-                                : "🍔"}
-                      </div>
-
-                      <div>
-                        <p className="text-xs font-medium text-gray-800">
-                          {item.title}
-                        </p>
-
-                        <p className="text-[10px] text-gray-400">
-                          {item.category}
-                        </p>
-                      </div>
-                    </div>
-                  </td>
-
-                  {/* Category */}
-                  <td className="px-4 py-3">
-                    <span
-                      className={`rounded-md px-2 py-1 text-[10px] font-medium ${
-                        categoryColors[item.category] ||
-                        "bg-gray-50 text-gray-500"
-                      }`}
-                    >
-                      {item.category}
-                    </span>
-                  </td>
-
-                  {/* Amount */}
-                  <td className="px-4 py-3">
-                    <span className="text-xs font-semibold text-red-500">
-                      -$
-                      {Number(item.amount).toLocaleString(undefined, {
-                        minimumFractionDigits: 2,
-                        maximumFractionDigits: 2,
-                      })}
-                    </span>
-                  </td>
-
-                  {/* Date */}
-                  <td className="px-4 py-3 text-xs text-gray-600">
-                    {formatDate(item.date)}
-                  </td>
-
-                  {/* Actions */}
-                  <td className="px-4 py-3 text-center">
-                    <button
-                      type="button"
-                      onClick={() => handleDelete(item.id)}
-                      className="text-gray-400 transition hover:text-red-500"
-                    >
-                      <Trash2 size={16} />
-                    </button>
-                  </td>
-                </tr>
-              ))
-            )}
-          </tbody>
-        </table>
-      </div>
-
-      {/* ================================
-          FOOTER / PAGINATION
-      ================================= */}
-
-      <div className="flex items-center justify-between border-t border-gray-100 px-4 py-3">
-        <p className="text-[10px] text-gray-500">
-          Showing {filteredExpenses.length === 0 ? 0 : startIndex + 1} to{" "}
-          {Math.min(startIndex + itemsPerPage, filteredExpenses.length)} of{" "}
-          {filteredExpenses.length} expenses
-        </p>
-
-        <div className="flex items-center gap-1">
-          {/* Previous */}
-          <button
-            type="button"
-            disabled={currentPage === 1}
-            onClick={() => setCurrentPage((page) => Math.max(page - 1, 1))}
-            className="flex h-7 w-7 items-center justify-center rounded-md border border-gray-200 text-xs text-gray-500 disabled:opacity-40"
-          >
-            ‹
-          </button>
-
-          {/* Pages */}
-          {Array.from({ length: totalPages }, (_, index) => index + 1).map(
-            (page) => (
-              <button
-                key={page}
-                type="button"
-                onClick={() => setCurrentPage(page)}
-                className={`flex h-7 w-7 items-center justify-center rounded-md border text-xs ${
-                  currentPage === page
-                    ? "border-teal-500 text-teal-500"
-                    : "border-gray-200 text-gray-500"
-                }`}
-              >
-                {page}
-              </button>
-            ),
-          )}
-
-          {/* Next */}
-          <button
-            type="button"
-            disabled={currentPage === totalPages || totalPages === 0}
-            onClick={() =>
-              setCurrentPage((page) => Math.min(page + 1, totalPages))
-            }
-            className="flex h-7 w-7 items-center justify-center rounded-md border border-gray-200 text-xs text-gray-500 disabled:opacity-40"
-          >
-            ›
-          </button>
-        </div>
-      </div>
+      <ExpensePagination
+        totalExpenses={filteredExpenses.length}
+        startIndex={startIndex}
+        itemsPerPage={itemsPerPage}
+        totalPages={totalPages}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+      />
     </div>
   );
 };

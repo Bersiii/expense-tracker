@@ -1,13 +1,6 @@
 "use client";
 
-import React from "react";
-import { Save } from "lucide-react";
-
-type SettingsHeaderProps = {
-  onSave?: () => void;
-};
-
-const SettingsHeader = ({ onSave }: SettingsHeaderProps) => {
+const SettingsHeader = () => {
   return (
     <div className="w-full">
       <div className="flex items-center justify-between">

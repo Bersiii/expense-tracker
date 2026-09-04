@@ -2,6 +2,8 @@
 
 import React, { useEffect, useState } from "react";
 import CategoriesHeader from "@/components/userUI/CategoriesHeader";
+import CategoryStatistics from "@/components/userUI/CategoryStatistics";
+import CategoryList from "@/components/userUI/CategoryList";
 
 type Expense = {
   id: number;
@@ -85,15 +87,10 @@ const CategoriesPage = () => {
     category.toLowerCase().includes(search.toLowerCase()),
   );
 
-  // Add category button
-  const handleAddCategory = () => {
-    console.log("Add category clicked");
-  };
-
   return (
     <div className="min-h-screen bg-gray-50 p-6">
       {/* Header */}
-      <CategoriesHeader onAddCategory={handleAddCategory} />
+      <CategoriesHeader />
 
       {/* Loading */}
       {loading ? (
@@ -103,40 +100,11 @@ const CategoriesPage = () => {
       ) : (
         <>
           {/* Statistics */}
-          <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3">
-            {/* Total Categories */}
-            <div className="rounded-xl border border-gray-200 bg-white p-5">
-              <p className="text-sm text-gray-500">Total Categories</p>
-
-              <h2 className="mt-2 text-2xl font-bold text-gray-900">
-                {categories.length}
-              </h2>
-            </div>
-
-            {/* Total Spent */}
-            <div className="rounded-xl border border-gray-200 bg-white p-5">
-              <p className="text-sm text-gray-500">Total Spent</p>
-
-              <h2 className="mt-2 text-2xl font-bold text-gray-900">
-                ${totalSpent.toFixed(2)}
-              </h2>
-            </div>
-
-            {/* Highest Category */}
-            <div className="rounded-xl border border-gray-200 bg-white p-5">
-              <p className="text-sm text-gray-500">Highest Category</p>
-
-              <h2 className="mt-2 text-2xl font-bold text-gray-900">
-                {highestCategory ? highestCategory[0] : "No data"}
-              </h2>
-
-              {highestCategory && (
-                <p className="mt-1 text-sm text-gray-500">
-                  ${highestCategory[1].amount.toFixed(2)}
-                </p>
-              )}
-            </div>
-          </div>
+          <CategoryStatistics
+            categories={categories}
+            totalSpent={totalSpent}
+            highestCategory={highestCategory}
+          />
 
           {/* Search */}
           <div className="mt-8 flex items-center justify-between">
@@ -154,70 +122,11 @@ const CategoriesPage = () => {
           </div>
 
           {/* Categories */}
-          <div className="mt-4 overflow-hidden rounded-xl border border-gray-200 bg-white">
-            {filteredCategories.length === 0 ? (
-              <div className="p-10 text-center">
-                <p className="text-gray-500">No categories found.</p>
-              </div>
-            ) : (
-              filteredCategories
-                .sort((a, b) => b[1].amount - a[1].amount)
-                .map(([category, data]) => {
-                  const percentage =
-                    totalSpent > 0 ? (data.amount / totalSpent) * 100 : 0;
-
-                  return (
-                    <div
-                      key={category}
-                      className="border-b border-gray-100 p-5 last:border-b-0"
-                    >
-                      <div className="flex items-center justify-between">
-                        {/* Category name */}
-                        <div className="flex items-center gap-4">
-                          <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-gray-100 text-xl">
-                            {getCategoryIcon(category)}
-                          </div>
-
-                          <div>
-                            <h3 className="font-semibold text-gray-900">
-                              {category}
-                            </h3>
-
-                            <p className="text-sm text-gray-500">
-                              {data.transactions}{" "}
-                              {data.transactions === 1
-                                ? "transaction"
-                                : "transactions"}
-                            </p>
-                          </div>
-                        </div>
-
-                        {/* Amount */}
-                        <div className="text-right">
-                          <p className="font-semibold text-teal-900">
-                            ${data.amount.toFixed(2)}
-                          </p>
-
-                          <p className="text-sm text-gray-500">
-                            {percentage.toFixed(1)}%
-                          </p>
-                        </div>
-                      </div>
-
-                      {/* Progress bar */}
-                      <div className="mt-4 h-2 w-full rounded-full bg-teal-100">
-                        <div
-                          className="h-2 rounded-full bg-teal-500 transition-all"
-                          style={{
-                            width: `${percentage}%`,
-                          }}
-                        />
-                      </div>
-                    </div>
-                  );
-                })
-            )}
-          </div>
+          <CategoryList
+            filteredCategories={filteredCategories}
+            totalSpent={totalSpent}
+            getCategoryIcon={getCategoryIcon}
+          />
         </>
       )}
     </div>

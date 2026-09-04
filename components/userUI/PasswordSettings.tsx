@@ -88,7 +88,7 @@ const PasswordSettings = () => {
 
             <div className="relative">
               <Lock
-                size={18}
+                size={10}
                 className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
               />
 

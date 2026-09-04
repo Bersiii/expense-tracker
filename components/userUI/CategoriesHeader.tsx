@@ -1,13 +1,6 @@
 "use client";
 
-import React from "react";
-import { Plus } from "lucide-react";
-
-type CategoriesHeaderProps = {
-  onAddCategory?: () => void;
-};
-
-const CategoriesHeader = ({ onAddCategory }: CategoriesHeaderProps) => {
+const CategoriesHeader = () => {
   return (
     <div className="w-full">
       <div className="flex items-center justify-between">
@@ -19,16 +12,6 @@ const CategoriesHeader = ({ onAddCategory }: CategoriesHeaderProps) => {
             Manage and track your spending categories
           </p>
         </div>
-
-        {/* Add Category button */}
-        {/* <button
-          type="button"
-          onClick={onAddCategory}
-          className="flex items-center gap-2 rounded-lg bg-black px-4 py-2.5 text-sm font-medium text-white transition hover:bg-gray-800"
-        >
-          <Plus size={18} />
-          Add Category
-        </button> */}
       </div>
 
       {/* Bottom border */}
