@@ -1,7 +1,5 @@
 "use client";
 
-import React from "react";
-
 type Expense = {
   id: number;
   title: string;
@@ -22,12 +20,17 @@ const RecentExpenses = ({ expense }: RecentExpensesProps) => {
     .slice(0, 5);
 
   const categoryColors: Record<string, string> = {
-    Food: "bg-teal-50 text-teal-500",
-    "Food & Dining": "bg-teal-50 text-teal-500",
-    Transport: "bg-blue-50 text-blue-500",
-    Shopping: "bg-green-50 text-green-500",
-    Bills: "bg-purple-50 text-purple-500",
-    Entertainment: "bg-yellow-50 text-yellow-600",
+    Food: "bg-red-50 text-red-700",
+    "Food & Dining": "bg-teal-50 text-teal-700",
+
+    Transportation: "bg-blue-50 text-blue-700",
+
+    Shopping: "bg-emerald-50 text-emerald-700",
+
+    Bills: "bg-violet-50 text-violet-700",
+
+    Entertainment: "bg-amber-50 text-amber-700",
+    Health: "bg-emerald-50 text-emerald-700",
   };
 
   const categoryIcons: Record<string, string> = {
@@ -52,8 +55,6 @@ const RecentExpenses = ({ expense }: RecentExpensesProps) => {
       {/* Header */}
       <div className="mb-5 flex items-center justify-between">
         <h2 className="text-sm font-semibold text-gray-900">Recent Expenses</h2>
-
-         
       </div>
 
       {/* Empty state */}

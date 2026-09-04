@@ -32,8 +32,8 @@ const ExpenseList = ({
           <tr className="border-b border-gray-100 bg-gray-50/50">
             <th className="w-12 px-4 py-3">
               <input
-                type="checkbox"
-                className="h-3.5 w-3.5 rounded border-gray-300"
+                type=""
+                className="h-4 w-4 cursor-pointer rounded border-gray-300 text-teal-600 accent-teal-600 focus:ring-2 focus:ring-teal-100"
               />
             </th>
 
@@ -79,7 +79,7 @@ const ExpenseList = ({
                 {/* Checkbox */}
                 <td className="px-4 py-3">
                   <input
-                    type="checkbox"
+                    type=""
                     className="h-3.5 w-3.5 rounded border-gray-300"
                   />
                 </td>
