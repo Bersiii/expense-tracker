@@ -1,12 +1,10 @@
-'use client';
-
+"use client";
 
 import Image from "next/image";
 import {
   LayoutDashboard,
   Receipt,
   PlusCircle,
-
   Tags,
   Settings,
 } from "lucide-react";
@@ -14,7 +12,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const Sidebar = () => {
-
   const pathname = usePathname();
 
   const menuItems = [
@@ -30,10 +27,10 @@ const Sidebar = () => {
     },
     {
       name: "Add Expense",
-      href: "/user/Add-expenses", 
+      href: "/user/Add-expenses",
       icon: PlusCircle,
     },
-    
+
     {
       name: "Categories",
       href: "/user/Categories",
@@ -50,13 +47,15 @@ const Sidebar = () => {
     <aside className="fixed left-0 top-0 z-40 hidden h-screen w-64  bg-[#c0bfc4] lg:block">
       <div className="flex h-full flex-col">
         <div className="p-5 pl-10  items-center justify-center">
-          <Image
-            src="/logo1.png"
-            alt="Montra logo"
-            width={120}
-            height={60}
-            className="object-contain"
-          />
+          <Link href="/">
+            <Image
+              src="/logo1.png"
+              alt="Montra logo"
+              width={120}
+              height={60}
+              className="object-contain"
+            />
+          </Link>
         </div>
         {/* Sidebar menu */}
         <nav className="flex-1 px-4 pt-5 ">

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useMemo, useState } from "react";
+import PeriodDropdown from "./PeriodDropdown";
 
 type Expense = {
   id: number;
@@ -18,6 +19,7 @@ type Props = {
 
 export const SpendingOverview = ({ expense }: Props) => {
   const [period, setPeriod] = useState("This week");
+  
 
   const chartData = useMemo(() => {
     const today = new Date();
@@ -100,15 +102,7 @@ export const SpendingOverview = ({ expense }: Props) => {
           <p className="mt-1 text-xs text-gray-400">Your spending activity</p>
         </div>
 
-        <select
-          value={period}
-          onChange={(e) => setPeriod(e.target.value)}
-          className="rounded-md border border-gray-200 bg-white px-3 py-1.5 text-xs text-gray-600 outline-none"
-        >
-          <option>This week</option>
-          <option>This month</option>
-          <option>This year</option>
-        </select>
+        <PeriodDropdown period={period} setPeriod={setPeriod} />
       </div>
 
       {/* Chart */}

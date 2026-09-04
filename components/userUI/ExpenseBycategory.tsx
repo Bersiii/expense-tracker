@@ -95,11 +95,7 @@ export const ExpenseByCategory = ({ expense }: Props) => {
           </p>
         </div>
 
-        <select className="rounded-md border border-gray-200 bg-white px-3 py-1.5 text-xs text-gray-600 outline-none">
-          <option>This month</option>
-          <option>This week</option>
-          <option>This year</option>
-        </select>
+       
       </div>
 
       <div className="flex items-center gap-6">
