@@ -61,28 +61,26 @@ const AddExpense = () => {
       <div className="mx-auto max-w-5xl">
         {" "}
         {/* Page Header */}{" "}
-        <div className="mb-7 flex items-start gap-4">
-          {" "}
-          <button
-            type="button"
-            onClick={() => router.back()}
-            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-600 shadow-sm transition-all hover:border-teal-200 hover:bg-teal-50 hover:text-teal-700"
-          >
-            {" "}
-            <ArrowLeft size={19} />{" "}
-          </button>{" "}
-          <div>
-            {" "}
-            <h1 className="text-2xl font-bold tracking-tight text-slate-900">
-              {" "}
-              Add Expense{" "}
-            </h1>{" "}
-            <p className="mt-1 text-sm text-gray-500">
-              {" "}
-              Record a new expense and keep track of your spending.{" "}
-            </p>{" "}
-          </div>{" "}
-        </div>{" "}
+        <div className="relative mb-7 overflow-hidden rounded-2xl bg-gradient-to-r from-teal-700 via-teal-600 to-teal-500 px-6 py-6 shadow-sm sm:px-8">
+          {/* Decorative circles */}
+          <div className="absolute -right-10 -top-16 h-40 w-40 rounded-full bg-white/10" />
+          <div className="absolute -bottom-20 right-24 h-44 w-44 rounded-full bg-white/5" />
+
+          <div className="relative flex items-center gap-4">
+            
+
+            {/* Header Content */}
+            <div>
+              <h1 className="text-2xl font-bold tracking-tight text-white">
+                Add Expense
+              </h1>
+
+              <p className="mt-1 text-sm text-teal-100">
+                Record a new expense and keep track of your spending.
+              </p>
+            </div>
+          </div>
+        </div>
         {/* Main Form Card */}{" "}
         <div className="mx-auto max-w-3xl overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
           {" "}
