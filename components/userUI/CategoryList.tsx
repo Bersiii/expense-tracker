@@ -15,13 +15,13 @@ const CategoryList = ({
   getCategoryIcon,
 }: CategoryListProps) => {
   return (
-    <div className="mt-4 overflow-hidden rounded-xl border border-gray-200 bg-white">
+    <div className="mt-4 overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
       {filteredCategories.length === 0 ? (
         <div className="p-10 text-center">
-          <p className="text-gray-500">No categories found.</p>
+          <p className="text-sm text-gray-500">No categories found.</p>
         </div>
       ) : (
-        filteredCategories
+        [...filteredCategories]
           .sort((a, b) => b[1].amount - a[1].amount)
           .map(([category, data]) => {
             const percentage =
@@ -32,19 +32,21 @@ const CategoryList = ({
                 key={category}
                 className="border-b border-gray-100 p-5 last:border-b-0"
               >
-                <div className="flex items-center justify-between">
-                  {/* Category name */}
+                {/* Category information */}
+                <div className="flex items-center justify-between gap-4">
                   <div className="flex items-center gap-4">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-gray-100 text-xl">
+                    {/* Icon */}
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-teal-50 text-xl">
                       {getCategoryIcon(category)}
                     </div>
 
+                    {/* Name and transactions */}
                     <div>
                       <h3 className="font-semibold text-gray-900">
                         {category}
                       </h3>
 
-                      <p className="text-sm text-gray-500">
+                      <p className="mt-0.5 text-sm text-gray-500">
                         {data.transactions}{" "}
                         {data.transactions === 1
                           ? "transaction"
@@ -53,24 +55,24 @@ const CategoryList = ({
                     </div>
                   </div>
 
-                  {/* Amount */}
+                  {/* Amount and percentage */}
                   <div className="text-right">
-                    <p className="font-semibold text-teal-900">
+                    <p className="font-semibold text-teal-800">
                       ${data.amount.toFixed(2)}
                     </p>
 
-                    <p className="text-sm text-gray-500">
+                    <p className="mt-0.5 text-sm text-gray-500">
                       {percentage.toFixed(1)}%
                     </p>
                   </div>
                 </div>
 
                 {/* Progress bar */}
-                <div className="mt-4 h-2 w-full rounded-full bg-teal-100">
+                <div className="mt-4 h-2 w-full overflow-hidden rounded-full bg-teal-50">
                   <div
-                    className="h-2 rounded-full bg-teal-500 transition-all"
+                    className="h-full rounded-full bg-teal-600 transition-all duration-500"
                     style={{
-                      width: `${percentage}%`,
+                      width: `${Math.min(percentage, 100)}%`,
                     }}
                   />
                 </div>

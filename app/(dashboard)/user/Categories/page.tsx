@@ -112,13 +112,7 @@ const CategoriesPage = () => {
               Spending Categories
             </h2>
 
-            <input
-              type="text"
-              placeholder="Search categories..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="w-64 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm outline-none focus:border-gray-400"
-            />
+            
           </div>
 
           {/* Categories */}
