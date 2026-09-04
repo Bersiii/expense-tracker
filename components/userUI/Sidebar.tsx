@@ -119,7 +119,8 @@ const Sidebar = () => {
 
           {/* ================= LOGOUT ================= */}
           <div className="border-t border-gray-300/60 p-3">
-            <button
+          <Link href="/">
+           <button
               type="button"
               className="flex w-full items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium text-slate-700 transition-all hover:bg-white/60 hover:text-red-600"
             >
@@ -127,6 +128,8 @@ const Sidebar = () => {
 
               <span>Logout</span>
             </button>
+          </Link>
+           
           </div>
         </div>
       </aside>
