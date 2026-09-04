@@ -26,7 +26,7 @@ const Home = () => {
         <div className="mt-9 flex flex-wrap gap-4">
           <Link
             href="/register"
-            className="rounded-full bg-teal-600 not-only:px-8 py-4 text-base font-medium text-white shadow-lg shadow-orange-500/20 transition hover:bg-teal-800"
+            className="rounded-full bg-teal-600 not-only:px-8 py-4 text-base font-medium text-white shadow-lg shadow-teal-500/20 transition hover:bg-teal-800"
           >
             Get started - for free
           </Link>

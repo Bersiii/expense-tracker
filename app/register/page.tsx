@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Logo from "@/components/logo/logo";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -137,13 +138,19 @@ const Register = () => {
 
                 <p className="text-xs leading-5 text-gray-500">
                   I agree to{" "}
-                  <a href="#" className="text-teal-500 hover:text-teal-600">
+                  <Link
+                    href="/terms"
+                    className="text-teal-500 hover:text-teal-600"
+                  >
                     Terms
-                  </a>{" "}
+                  </Link>{" "}
                   and{" "}
-                  <a href="#" className="text-teal-500 hover:text-teal-600">
+                  <Link
+                    href="/privacy-policy"
+                    className="text-teal-500 hover:text-teal-600"
+                  >
                     Privacy Policy
-                  </a>
+                  </Link>
                 </p>
               </div>
 

@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Logo from "@/components/logo/logo";
+import Link from "next/link";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -113,12 +114,12 @@ const Login = () => {
                   <span className="text-xs text-gray-500">Remember me</span>
                 </label>
 
-                <a
-                  href="/forgot-password"
+                <Link
+                  href="/"
                   className="text-xs font-medium text-teal-500 hover:text-teal-600"
                 >
                   Forgot password?
-                </a>
+                </Link>
               </div>
 
               {/* Button */}
