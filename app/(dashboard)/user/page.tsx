@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { ExpenseByCategory } from "@/components/userUI/ExpenseBycategory";
 import { SpendingOverview } from "@/components/userUI/SpendingOverview";
 import RecentExpenses from "@/components/userUI/RecentExpenses";
@@ -19,7 +19,7 @@ type Expense = {
 
 const Overview = () => {
   const [expense, setExpense] = useState<Expense[]>([]);
-  const [loading, setLoading] = useState(true);
+
 
   useEffect(() => {
     const fetchExpense = async () => {
@@ -40,7 +40,7 @@ const Overview = () => {
       } catch (error) {
         console.error("Error fetching expense:", error);
       } finally {
-        setLoading(false);
+        
       }
     };
 

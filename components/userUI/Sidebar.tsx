@@ -7,6 +7,7 @@ import {
   PlusCircle,
   Tags,
   Settings,
+  LogOut,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -30,7 +31,6 @@ const Sidebar = () => {
       href: "/user/Add-expenses",
       icon: PlusCircle,
     },
-
     {
       name: "Categories",
       href: "/user/Categories",
@@ -44,40 +44,43 @@ const Sidebar = () => {
   ];
 
   return (
-    <aside className="fixed left-0 top-0 z-40 hidden h-screen w-64  bg-[#c0bfc4] lg:block">
+    <aside className="fixed left-0 top-0 z-40 hidden h-screen w-64 border-r border-gray-200 bg-[#c0bfc4] lg:block">
       <div className="flex h-full flex-col">
-        <div className="p-5 pl-10  items-center justify-center">
+        {/* Logo */}
+        <div className="flex h-24 items-center px-8">
           <Link href="/">
             <Image
               src="/logo1.png"
               alt="Montra logo"
               width={120}
               height={60}
-              className="object-contain"
+              className="h-auto w-[120px] object-contain"
             />
           </Link>
         </div>
-        {/* Sidebar menu */}
-        <nav className="flex-1 px-4 pt-5 ">
-          <ul className="menu w-full gap-2 pt-0  ">
+
+        {/* Navigation */}
+        <nav className="flex-1 px-4 pt-5">
+          <ul className="flex w-full flex-col gap-2">
             {menuItems.map((item) => {
               const Icon = item.icon;
 
               const active =
                 pathname === item.href ||
-                (item.href !== "/" && pathname.startsWith(item.href));
+                (item.href !== "/user" && pathname.startsWith(item.href));
 
               return (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className={`flex items-center gap-3 rounded-xl px-4 py-3 transition-all ${
+                    className={`flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition-all duration-200 ${
                       active
-                        ? "bg-white text-teal-500 shadow-sm"
-                        : "text-slate-700 hover:bg-white/50"
+                        ? "bg-white text-teal-700 shadow-sm"
+                        : "text-slate-700 hover:bg-white/60 hover:text-teal-700"
                     }`}
                   >
-                    <Icon size={20} />
+                    <Icon size={20} strokeWidth={active ? 2.5 : 2} />
+
                     <span>{item.name}</span>
                   </Link>
                 </li>
@@ -87,9 +90,13 @@ const Sidebar = () => {
         </nav>
 
         {/* Logout */}
-        <div className=" p-4">
-          <button className="w-full rounded-xl px-4 py-3 text-left text-sm text-slate-700 hover:bg-white/50">
-            Logout
+        <div className="border-t border-gray-300/60 p-4">
+          <button
+            type="button"
+            className="flex w-full items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium text-slate-700 transition-all hover:bg-white/60 hover:text-red-600"
+          >
+            <LogOut size={20} />
+            <span>Logout</span>
           </button>
         </div>
       </div>

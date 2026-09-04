@@ -24,7 +24,10 @@ export default async function DashboardLayout({
       })
     : null;
   return (
-    <div className="min-h-screen bg-[#f6f7f9]">
+    <div
+      className="min-h-screen bg-white"
+      
+    >
       <Sidebar />
       <div className="lg:ml-64">
         <Header name={user?.name || ""} email={user?.email || ""} />

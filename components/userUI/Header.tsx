@@ -25,9 +25,9 @@ const Header = ({ name, email }: ProfileSettingsProps) => {
                 <span className="ml-1">👋</span>
               </p>
             </div>
-            ```
+            
           </div>
-          ```
+          
         </div>
 
         {/* RIGHT */}

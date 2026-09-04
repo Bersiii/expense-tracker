@@ -1,4 +1,4 @@
-import CategoryDropdown from "./CategoryDropdown";
+import CategoryDropdown from "./Select";
 
 type ExpenseFiltersProps = {
   category: string;

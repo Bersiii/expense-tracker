@@ -41,9 +41,8 @@ const ExpenseInsights = ({ expense }: ExpenseInsightsProps) => {
 
   return (
     <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-      {/*LARGEST EXPENSE*/}
-
-      <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+      {/* Largest Expense */}
+      <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
         <h2 className="text-sm font-semibold text-gray-900">Largest Expense</h2>
 
         {largestExpense ? (
@@ -52,7 +51,7 @@ const ExpenseInsights = ({ expense }: ExpenseInsightsProps) => {
               {largestExpense.title}
             </p>
 
-            <p className="mt-2 text-2xl font-bold text-gray-900">
+            <p className="mt-2 text-2xl font-bold text-teal-700">
               $
               {Number(largestExpense.amount).toLocaleString(undefined, {
                 minimumFractionDigits: 2,
@@ -60,26 +59,25 @@ const ExpenseInsights = ({ expense }: ExpenseInsightsProps) => {
               })}
             </p>
 
-            <p className="mt-2 text-xs text-gray-400">
+            <span className="mt-3 inline-flex rounded-full bg-teal-50 px-3 py-1 text-xs font-medium text-teal-700">
               {largestExpense.category}
-            </p>
+            </span>
           </div>
         ) : (
-          <div className="mt-6">
+          <div className="mt-6 rounded-lg bg-gray-50 p-4">
             <p className="text-sm text-gray-400">No expenses yet.</p>
           </div>
         )}
       </div>
 
-      {/* EXPENSE SUMMARY */}
-
-      <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+      {/* Expense Summary */}
+      <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
         <h2 className="text-sm font-semibold text-gray-900">Expense Summary</h2>
 
-        <div className="mt-6 space-y-4">
+        <div className="mt-6 divide-y divide-gray-100">
           {/* Total */}
-          <div className="flex items-center justify-between">
-            <span className="text-xs text-gray-500">Total:</span>
+          <div className="flex items-center justify-between py-3 first:pt-0">
+            <span className="text-xs text-gray-500">Total</span>
 
             <span className="text-sm font-semibold text-gray-900">
               $
@@ -91,8 +89,8 @@ const ExpenseInsights = ({ expense }: ExpenseInsightsProps) => {
           </div>
 
           {/* Transactions */}
-          <div className="flex items-center justify-between">
-            <span className="text-xs text-gray-500">Transactions:</span>
+          <div className="flex items-center justify-between py-3">
+            <span className="text-xs text-gray-500">Transactions</span>
 
             <span className="text-sm font-semibold text-gray-900">
               {transactions}
@@ -100,8 +98,8 @@ const ExpenseInsights = ({ expense }: ExpenseInsightsProps) => {
           </div>
 
           {/* Average */}
-          <div className="flex items-center justify-between">
-            <span className="text-xs text-gray-500">Average:</span>
+          <div className="flex items-center justify-between py-3 last:pb-0">
+            <span className="text-xs text-gray-500">Average</span>
 
             <span className="text-sm font-semibold text-gray-900">
               $
