@@ -45,10 +45,20 @@ export async function POST(request: NextRequest) {
       },
     });
 
-    // Don't send password back to the client
-    return NextResponse.json(
+    // 1.  አዲስ JWT Token አዘጋጅለት (መታወቂያ)
+    const token = await new SignJWT({
+      userId: user.id,
+      email: user.email,
+    })
+      .setProtectedHeader({ alg: "HS256" })
+      .setIssuedAt()
+      .setExpirationTime("7d")
+      .sign(secret);
+
+    // 2. Response እቃውን አዘጋጅ
+    const response = NextResponse.json(
       {
-        message: "User registered successfully",
+        message: "User registered and logged in successfully",
         user: {
           id: user.id,
           name: user.name,
@@ -57,6 +67,17 @@ export async function POST(request: NextRequest) {
       },
       { status: 201 },
     );
+
+    // 3.  Tokenኑን በ Cookie ውስጥ አስቀምጠው
+    response.cookies.set("token", token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "lax",
+      maxAge: 60 * 60 * 24 * 7,
+      path: "/",
+    });
+
+    return response;
   } catch (error) {
     console.error("Registration error:", error);
 
