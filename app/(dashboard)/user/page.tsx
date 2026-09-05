@@ -28,8 +28,7 @@ const Overview = () => {
 
         const text = await response.text();
 
-        console.log("STATUS:", response.status);
-        console.log("RESPONSE:", text);
+        
 
         if (!response.ok) {
           throw new Error("Failed to fetch expense");
